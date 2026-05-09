@@ -92,12 +92,12 @@ function validateFname() {
     let date = new Date(dob.value);
     let maxDate = new Date().setFullYear(new Date().getFullYear() -120);
 
-    if (date > new Date()) {
+    if (Date > new Date()) {
        document.getElementById("dob-error").innerHTML =
        "Date cannot be in there.";
        dob.value="";
        return false;
-    } else if(date < new Date(maxDate)) {
+    } else if(Date < new Date(maxDate)) {
        document.getElementById("dob-error").innerHTML =
        "date cannot be more than 120 years ago.";
        dob.value="";
@@ -172,7 +172,7 @@ function validateFname() {
       }
 
       zipInput.value =zip; 
-      document.getElementById("zcode-error").innerHTML ="";
+      document.getElementById("zpcode-error").innerHTML ="";
       return true;
    }
 
@@ -392,16 +392,16 @@ function validateFname() {
          if (!validateDob()) {
             valid = false;
          }
-         if (!validateSsn()) {
+         if (!validateSocialsec()) {
             valid = false;
          }
-         if (!validateAddress1()) {
+         if (!validateAddress()) {
             valid = false;
          }
          if (!validateCity()) {
             valid = false;
          }
-         if (!validateZcode()) {
+         if (!validateZpcode()) {
             valid = false;
          }
          if (!validateEmail()) {
@@ -417,14 +417,14 @@ function validateFname() {
             valid =false;
          }
          if (valid) {
-            document.getElementId("submit").disabled = false;
+            document.getElementById("submit").disabled = false;
          }else{
             showAlert();
          }
       }
 //cookie expire
 function setCookie(name, cvalue,expiryDays) {
-      var day = new date();
+      var day = new Date();
       day.setTime(day.getTime() + (expiryDays * 24 * 60 * 60 *1000));
       var expires = "expires=" + day.toUTCString();
       document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
@@ -457,7 +457,7 @@ var inputs = [
 ];
 
 inputs.forEach(function (input) {
-   var inputElement = document.getElementId(input.id);
+   var inputElement = document.getElementById(input.id);
 
    //Prefill input fields
    var cookieValue = getCookie(input.cookieName);
@@ -503,13 +503,13 @@ document.getElementById("remember-me").addEventListener("change", function () {
 function deleteAllCookies(){
    document.cookie.split(";").forEach(function (cookie) {
       let eqPos = cookie.indexOf("=");
-      let name = eqPos > -1 ? cookie.substr(0, eqPos) : cookies;
+      let name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
       document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
    });
 }
 //deletes cookies if the remember me box is unchecked when the page is loaded
 document.addEventListener("DOMContentLoaded", function () {
-   const rememberMe = document.getElementById("rememeber-me").checked;
+   const rememberMe = document.getElementById("remember-me").checked;
 
    if(!rememberMe){
       deleteAllCookies();
