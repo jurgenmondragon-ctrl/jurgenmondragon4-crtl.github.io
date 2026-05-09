@@ -463,7 +463,7 @@ inputs.forEach(function (input) {
    var cookieValue = getCookie(input.cookieName);
    if (cookieValue !== "") {
      inputElement.value = cookieValue;
-      };
+      }
 });
 
 //great the user with their name & message if cookie is set
