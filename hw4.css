@@ -6,8 +6,17 @@
 */
 
 header {
+  position:sticky;
+  top:0;
   width:100%;
   background-color: rgb(255,102,102);
+  transition: background-color 0.4 ease-in-out;
+   z-index: 1000;
+}
+
+header-scrolled{
+   background-color:rgb(255,102,102);
+   opacity:1.0;
 }
 
 body{
@@ -189,3 +198,36 @@ td.outputdata {
    text-align: center;
    font-family: "optima", sans-serif;
 }
+
+.iframe-container {
+   position: absolute;
+   top: 25%;
+   right: 15px;
+   width: 25%;
+   height: 100%;
+   overflow: hidden;
+   box-sizing: border-box;
+}
+
+.iframe-container iframe{
+   width: 95%;
+   height:20%;
+   border: 1px solid black;
+}
+/*cookie welcome message styling*/
+#welcome {
+   margin-top: 20px;
+   font-size: 20px;
+   text-align: center;
+   font-family: "optima", sans-serif;
+   font-weight: normal;
+}
+
+#welcome2 {
+   margin-top: 20px;
+   font-size: 20px;
+   text-align: center;
+   font-family: "optima", sans-serif;
+   font-weight: normal;
+} 
+
