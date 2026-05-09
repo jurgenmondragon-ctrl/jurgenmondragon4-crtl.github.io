@@ -462,7 +462,7 @@ inputs.forEach(function (input) {
    //Prefill input fields
    var cookieValue = getCookie(input.cookieName);
    if (cookieValue !== "") {
-      setCookie(input.cookieName, inputElement.value, 30);
+     inputElement.value = cookieValue;
       };
 });
 
