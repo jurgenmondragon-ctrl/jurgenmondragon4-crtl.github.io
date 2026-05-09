@@ -466,7 +466,7 @@ inputs.forEach(function (input) {
       }
 });
 
-//great the user with their name & message if cookie is set
+//greet the user with their name & message if cookie is set
 var firstName = getCookie("firstName");
 if (firstName !== "") {
    document.getElementById("welcome1").innerHTML = "Welcome back, " + firstName + "!<br>";
